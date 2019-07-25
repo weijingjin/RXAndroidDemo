@@ -5,6 +5,9 @@ import android.widget.Toast;
 
 import com.google.gson.JsonParseException;
 import com.ovo.network.R;
+import com.ovo.network.error.ErrorView;
+import com.ovo.network.error.ErrorViewHolder;
+import com.ovo.network.error.impl.ReloadrListener;
 
 import org.json.JSONException;
 
@@ -17,6 +20,15 @@ import io.reactivex.disposables.Disposable;
 import retrofit2.HttpException;
 
 public abstract class DefaultObserver<T> implements Observer<T> {
+
+    private ErrorViewHolder errorHolder;
+    public void initError(ErrorView errorView, ReloadrListener listener){
+        if (errorView != null && listener != null){
+            errorHolder = new ErrorViewHolder(AppContext.context);
+            errorView.setHolder(errorHolder);
+            errorHolder.setOnListener(listener);
+        }
+    }
 
     @Override
     public void onSubscribe(Disposable d) {

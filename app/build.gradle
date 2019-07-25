@@ -44,4 +44,8 @@ dependencies {
 //    implementation 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2'
 //    implementation 'com.trello.rxlifecycle2:rxlifecycle-components-preference:2.2.2'
 //    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+
+    /***上拉刷新*/
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-28'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-28'
 }

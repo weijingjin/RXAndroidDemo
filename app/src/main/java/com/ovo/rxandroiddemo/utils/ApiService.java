@@ -5,11 +5,13 @@ import com.ovo.rxandroiddemo.been.KLineInfo;
 import com.ovo.rxandroiddemo.been.ReqKLine;
 
 import io.reactivex.Observable;
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 import retrofit2.http.Url;
 
@@ -35,8 +37,9 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("login/loginMobile.do")
     Observable<DataInfo> postStr(@Field("account") String account, @Field("password") String password);
-//
-//    @FormUrlEncoded
-//    @POST("post")
-//    Observable<String> postStr(@Field("param")String param);
+
+    //上传图片
+    @FormUrlEncoded
+    @POST("post")
+    Observable<String> upload(@Part MultipartBody.Part body);
 }
